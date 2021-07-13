@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{info?.Title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="info">
+    <ion-card-header text-center>
+      <ion-card-subtitle>{{info.Genre}}</ion-card-subtitle>
+      <ion-card-subtitle>{{info.Year}} {{info.Language}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <img src="{{info.Poster}}" />
+      </ion-item>
+      {{info.Plot}}
+      <ion-item lines="none">
+        <ion-icon name="clipboard" slot="start"></ion-icon>
+        <ion-lable text-wrap>{{info.Director}}</ion-lable>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-icon name="people" slot="start"></ion-icon>
+        <ion-lable text-wrap>{{info.Actors}}</ion-lable>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>App de Películas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    placeholder="Buscar"
+    [(ngModel)]="term"
+    (ionChange)="searchChanged($event)"
+  ></ion-searchbar>
+  
+  <ion-list>
+    <ion-item button *ngFor="let film of (results | async)" [routerLink]="['/', 'film', film.imdbID]">
+      <ion-label text-wrap>
+        <h3>{{film.Title}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
